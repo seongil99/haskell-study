@@ -21,8 +21,14 @@ sumEveryTwo [] = []         -- Do nothing to the empty list
 sumEveryTwo [x] = [x]       -- Do nothing to lists with a single element
 sumEveryTwo (x:(y:zs)) = (x + y) : sumEveryTwo zs
 
+-- The number of hailstone steps needed to reach 1 from a starting
+-- number.
+hailstoneLen :: Integer -> Integer
+hailstoneLen n = intListLength (hailstoneSeq n) - 1
+
 main = do
   print (hailstoneSeq 5)
   print (hailstoneSeq 6)
   print (intListLength [1, 2, 3, 4, 5])
   print (sumEveryTwo [1, 2, 3, 4, 5])
+  print (hailstoneLen 6)
