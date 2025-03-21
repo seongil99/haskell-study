@@ -2,6 +2,17 @@ module Main where
 
 main :: IO ()
 
+-- Week 2
+
+data Thing = Shoe 
+           | Ship 
+           | SealingWax 
+           | Cabbage  
+           | King
+  deriving Show
+
+-- Week 1
+
 hailstone :: Integer -> Integer
 hailstone n
   | even n = n `div` 2
